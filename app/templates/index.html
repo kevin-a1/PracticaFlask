@@ -1,13 +1,20 @@
-{% extends "base_template.html" %}
-
-{% block title %}
-        inicio
-{% endblock %}
-
-{% block content %}
-    {% if num_posts %}
-        Modificando el post {{ num_posts }}
-    {% else %}
-        Nuevo post
-    {% endif %}
-{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Examen</title>
+<link rel="stylesheet" href="{{ url_for("static", filename="base.css") }}">
+</head>
+<body>
+<div>
+  <h1 style="text-align:center">Modifica una imagen Flask + AWS</h1>
+  <div style="text-align:center">
+    <form action="" method="post">
+          <label for="name"> Escojer Imagen</label>
+          <input type="text" id="imagen" name="imagen" /><br>
+          <br>
+          <input type="submit" id="send-signup" name="signup" value="Redimencionar" />
+      </form>
+  </div>
+</div>
+</body>
+</html>
