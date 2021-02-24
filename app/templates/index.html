@@ -8,11 +8,21 @@
 <div>
   <h1 style="text-align:center">Modifica una imagen Flask + AWS</h1>
   <div style="text-align:center">
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
           <label for="name"> Escojer Imagen</label>
-          <input type="text" id="imagen" name="imagen" /><br>
+          <input type="file" id="imagen" name="imagen" /><br>
           <br>
-          <input type="submit" id="send-signup" name="signup" value="Redimencionar" />
+          <br>
+          <input type="submit" id="send-signup" name="signup" value="Redimencionar"/>
+          <br>
+          <br>
+          {% if imag %}
+            <p>Imagen Anterior</p><br>
+            <img src={{imag}} alt="imagen">
+            <p>Link de la nueva imagen</p>
+          {% else %}
+            <p style = "text-align:center"> Subir una imagen</p>
+          {% endif %}
       </form>
   </div>
 </div>
