@@ -22,5 +22,13 @@ def index():
     if request.method == 'POST':
      imagen = request.files['imagen']
      s3.upload_fileobj(imagen,bucket,'img/image1.png', ExtraArgs={'ACL':'public-read'})
+    return render_template("index.html",imag = imagen, respuesta=lin())
 
-    return render_template("index.html",imag = imagen)
+
+def lin():
+    dir={"message":"Internal Server Error"};
+    serv= requests.post("https://be54oxtha6.execute-api.us-east-1.amazonaws.com/default/examen")
+    if serv == dir:
+        return 'https://examenllivichuzhcakevin.s3.amazonaws.com/+img_redim/imagen1.png'
+    else:
+        return 'Error al procesar la imagen'
