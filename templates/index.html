@@ -1,0 +1,13 @@
+{% extends "base_template.html" %}
+
+{% block title %}
+        inicio
+{% endblock %}
+
+{% block content %}
+    {% if num_posts %}
+        Modificando el post {{ num_posts }}
+    {% else %}
+        Nuevo post
+    {% endif %}
+{% endblock %}
